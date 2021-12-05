@@ -8,19 +8,17 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-/**
- * @Description
- * @Author Mokairui
- * @Since 2021/10/17
- */
-@Table(name = "tb_category")
+@Table(name = "tb_brand")
 @Data
-public class Category {
+public class Brand {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    // 属性格式不可以设置基本类型int, long等, 要使用Integer, Long等包装类,
+    // 使用基本类型通用mapper查询出来的id都是0
     private Long id;
     private String name;
-    private Long parentId;
-    private Boolean isParent;
-    private Integer sort;
+    private String image;
+    private String letter;
+
 }
